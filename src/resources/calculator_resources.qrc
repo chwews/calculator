@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/del_symb4.png</file>
+        <file>images/checked_radiobutton.png</file>
+        <file>images/unchecked_radiobutton.png</file>
+    </qresource>
+</RCC>

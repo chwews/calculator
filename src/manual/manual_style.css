@@ -1,0 +1,36 @@
+h3 {
+    background-color: #6495EDBC;
+}
+
+th {
+    background-color: antiquewhite;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.simple_calculator {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credit_calculator {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.graph_panel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.credit_table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
