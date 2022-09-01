@@ -1,6 +1,6 @@
 #include "calculator_view.h"
 
-CalculatorView::CalculatorView(QWidget *parent, s21::CalculatorController *c)
+CalculatorView::CalculatorView(QWidget *parent, chwews::CalculatorController *c)
     : QMainWindow(parent),
       ui(new Ui::CalculatorView),
       _controller(c),
@@ -19,7 +19,7 @@ CalculatorView::~CalculatorView() { delete ui; }
 
 Ui::CalculatorView *CalculatorView::get_ui() { return this->ui; }
 
-void CalculatorView::setup_controller(s21::CalculatorController *c) {
+void CalculatorView::setup_controller(chwews::CalculatorController *c) {
     this->_controller = c;
     QObject::connect(this->ui->delete_symbol_button, SIGNAL(clicked()), this, SLOT(update()));
     QObject::connect(this->ui->left_bracket_button, SIGNAL(clicked()), this, SLOT(update()));

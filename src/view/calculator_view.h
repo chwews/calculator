@@ -10,7 +10,7 @@
 #include "../ui/ui_calculatorview.h"
 #include "qcustomplot.h"
 
-namespace s21 {
+namespace chwews {
 class CalculatorController;
 }
 
@@ -24,11 +24,11 @@ class CalculatorView : public QMainWindow {
     Q_OBJECT
 
  public:
-    explicit CalculatorView(QWidget *parent = nullptr, s21::CalculatorController *c = nullptr);
+    explicit CalculatorView(QWidget *parent = nullptr, chwews::CalculatorController *c = nullptr);
     ~CalculatorView();
 
     Ui::CalculatorView *get_ui();
-    void setup_controller(s21::CalculatorController *c);
+    void setup_controller(chwews::CalculatorController *c);
 
  private slots:
     void update();
@@ -39,7 +39,7 @@ class CalculatorView : public QMainWindow {
 
  private:
     Ui::CalculatorView *ui;
-    s21::CalculatorController *_controller;
+    chwews::CalculatorController *_controller;
     bool _inverse_flag;
     bool _resize_flag;
 

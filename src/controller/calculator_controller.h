@@ -5,10 +5,10 @@
 
 class CalculatorView;
 
-namespace s21 {
+namespace chwews {
 class CalculatorController {
  public:
-    explicit CalculatorController(s21::CalculatorModel* m) : _model(m) {}
+    explicit CalculatorController(chwews::CalculatorModel* m) : _model(m) {}
     ~CalculatorController() = default;
 
     std::string process_event(std::string event, double x_value) {
@@ -22,6 +22,6 @@ class CalculatorController {
     }
 
  private:
-    s21::CalculatorModel* _model;
+    chwews::CalculatorModel* _model;
 };
-}  // namespace s21
+}  // namespace chwews

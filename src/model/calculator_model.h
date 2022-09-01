@@ -7,7 +7,7 @@
 
 // #include "../ui/ui_calculatorview.h"
 
-namespace s21 {
+namespace chwews {
 class CalculatorModel {
  public:
     CalculatorModel() = default;
@@ -76,4 +76,4 @@ class CalculatorModel {
         }
     }
 };
-}  // namespace s21
+}  // namespace chwews

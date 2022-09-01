@@ -2,6 +2,7 @@ BD=../build/
 CFLAGS=-Wall -Wextra -Werror -std=c++17
 GTESTFLAGS=-lgtest -I./ -L./
 CC=g++
+OS:=$(shell uname -s)
 
 SRC=calculator_model.cpp
 OBJ=$(addprefix $(BD),$(SRC:.cpp=.o))
@@ -11,8 +12,12 @@ VERSION = `date +"%Y.%m.%d"`
 ARCHIVE = $(PACKAGE)-$(VERSION)
 
 APP=$(BD)SmartCalc.app
-APPDIR=$(HOME)/Applications/SmartCalc/
-APP_EXE=$(APPDIR)SmartCalc.app/Contents/MacOS/SmartCalc
+APPDIR=./SmartCalc/
+ifeq ($(OS), Darwin)
+	APP_EXE=$(APPDIR)SmartCalc.app/Contents/MacOS/SmartCalc
+else
+	APP_EXE=$(APPDIR)SmartCalc
+endif
 
 
 all: build_dir install

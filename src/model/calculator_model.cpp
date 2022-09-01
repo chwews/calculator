@@ -2,9 +2,9 @@
 
 #include <iostream>
 
-#define S21_NAN 0.0 / 0.0
+#define chwews_NAN 0.0 / 0.0
 
-namespace s21 {
+namespace chwews {
 CalculatorModel::CalculatorModel(const CalculatorModel& other)
     : _calculate_line(other._calculate_line),
       _display_line(other._display_line),
@@ -146,7 +146,7 @@ void CalculatorModel::_process_bracket() {
     if (!this->_operation_stack.empty()) {
         this->_operation_stack.pop();
     } else {
-        this->_number_stack.push(S21_NAN);
+        this->_number_stack.push(chwews_NAN);
     }
 }
 
@@ -179,10 +179,10 @@ double CalculatorModel::_get_result() {
         result = this->_number_stack.top();
         this->_number_stack.pop();
         if (!this->_number_stack.empty()) {
-            result = S21_NAN;
+            result = chwews_NAN;
         }
     } else {
-        result = S21_NAN;
+        result = chwews_NAN;
     }
     return result;
 }
@@ -213,7 +213,7 @@ double CalculatorModel::_get_number(int& pos) {
     }
     --pos;
     result.shrink_to_fit();
-    return result.empty() ? S21_NAN : std::atof(result.c_str());
+    return result.empty() ? chwews_NAN : std::atof(result.c_str());
 }
 
 void CalculatorModel::_calculate_operation() {
@@ -226,7 +226,7 @@ void CalculatorModel::_calculate_operation() {
         if (!this->_number_stack.empty() &&
             (this->_number_stack.top() == 1.0 / 0.0 || this->_number_stack.top() == -1.0 / 0.0)) {
             this->_number_stack.pop();
-            this->_number_stack.push(S21_NAN);
+            this->_number_stack.push(chwews_NAN);
         }
     }
 }
@@ -258,11 +258,11 @@ void CalculatorModel::_unary_calculate() {
         } else if (this->_operation_stack.top().get_name() == "log") {
             this->_number_stack.push(log10(num));
         } else {
-            this->_number_stack.push(S21_NAN);
+            this->_number_stack.push(chwews_NAN);
         }
         this->_operation_stack.pop();
     } else {
-        this->_number_stack.push(S21_NAN);
+        this->_number_stack.push(chwews_NAN);
     }
 }
 
@@ -286,14 +286,14 @@ void CalculatorModel::_binary_calculate() {
             } else if (this->_operation_stack.top().get_name() == "%") {
                 this->_number_stack.push(fmod(num2, num1));
             } else {
-                this->_number_stack.push(S21_NAN);
+                this->_number_stack.push(chwews_NAN);
             }
             this->_operation_stack.pop();
         } else {
-            this->_number_stack.push(S21_NAN);
+            this->_number_stack.push(chwews_NAN);
         }
     } else {
-        this->_number_stack.push(S21_NAN);
+        this->_number_stack.push(chwews_NAN);
     }
 }
 
@@ -473,4 +473,4 @@ std::string CalculatorModel::_check_log(int pos) {
     return res;
 }
 
-}  // namespace s21
+}  // namespace chwews
