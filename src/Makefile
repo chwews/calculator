@@ -12,7 +12,7 @@ VERSION = `date +"%Y.%m.%d"`
 ARCHIVE = $(PACKAGE)-$(VERSION)
 
 APP=$(BD)SmartCalc.app
-APPDIR=./SmartCalc/
+APPDIR=../SmartCalc/
 ifeq ($(OS), Darwin)
 	APP_EXE=$(APPDIR)SmartCalc.app/Contents/MacOS/SmartCalc
 else

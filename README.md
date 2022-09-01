@@ -1,5 +1,14 @@
 <h1><b>Calculator</b></h1>
 
+<h2><b>MAKE COMMANDS</b></h2>
+Use Makefile in src directory.<br></br>
+
+make install: install the application in root directory SmartCalc folder<br>
+make uninstall: remove the application<br>
+make run: run the application<br>
+make dist: archive installed application<br>
+make dvi: open html manual<br>
+
 <h2><b>GENERAL INFO</b></h2>
 Desktop calculator on C++ using Qt.<br>
 Application provides calculator for arithmetic operations and credit calculatoins.<br>
